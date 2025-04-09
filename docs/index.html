@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>httpd_settings – Apache Config Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Semantic UI CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+
+    <style>
+        body {
+          padding-top: 60px;
+        }
+        .ui.menu .item.logo {
+          font-weight: bold;
+          color: white !important;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top black menu -->
+<div class="ui fixed inverted menu">
+    <div class="ui container">
+        <a href="index.html" class="header item logo">
+            <img src="favicon.ico" style="width: 24px; height: 24px; margin-right: 10px;" alt="Logo">
+            httpd_settings
+        </a>
+        <a href="https://github.com/iuscl-ide/httpd_settings" class="item">GitHub</a>
+        <a href="https://github.com/iuscl-ide/httpd_settings/releases" class="item">Releases</a>
+        <!-- Future pages -->
+        <!-- <a href="screenshots.html" class="item">Screenshots</a> -->
+        <!-- <a href="stats.html" class="item">Stats</a> -->
+    </div>
+</div>
+
+<!-- Main content -->
+<!-- Main content -->
+<div class="ui main text container">
+    <h1 class="ui header">Apache Server Configuration for Windows</h1>
+    <p><strong>httpd Settings (httpd_settings)</strong> is a portable Windows desktop application that helps you configure your local Apache HTTP Server (<code>httpd</code>) using a clean graphical interface.</p>
+
+    <h3 class="ui header">About the Tool</h3>
+    <p>Instead of editing <code>httpd.conf</code> and <code>httpd-vhosts.conf</code> manually, this tool lets you manage server locations, define SRVROOT paths, add and activate multiple ports, and set up virtual hosts and aliases — all with helpful validation, previews, and comments added to config files automatically.</p>
+
+    <div class="ui divider"></div>
+
+    <h3 class="ui header">Features</h3>
+    <ul class="ui list">
+        <li>Manage multiple Apache server locations</li>
+        <li>Set <code>SRVROOT</code> path with intelligent defaults</li>
+        <li>Add multiple HTTP and HTTPS ports, toggle active state</li>
+        <li>Create Virtual Hosts with custom ports, DocumentRoot, and Aliases</li>
+        <li>View config file content with line context and highlights</li>
+        <li>Export and import named configurations (JSON format)</li>
+    </ul>
+
+    <h3 class="ui header">Why Use It?</h3>
+    <ul class="ui list">
+        <li>No need to manually edit Apache config files</li>
+        <li>Safe and reversible edits — everything added is clearly marked</li>
+        <li>Portable: no installation required</li>
+        <li>Readable config output that respects your existing setup</li>
+    </ul>
+
+    <h3 class="ui header">Requirements</h3>
+    <ul class="ui list">
+        <li>Windows 10 or later</li>
+        <li>A local copy of Apache HTTP Server (e.g., <code>httpd-2.4.62</code>)</li>
+        <li>This app does not bundle Apache or start/stop it</li>
+    </ul>
+
+    <h3 class="ui header">Getting Started</h3>
+    <div class="ui ordered list">
+        <div class="item">Download the latest ZIP release</div>
+        <div class="item">Extract it anywhere and run <code>httpd_settings.exe</code></div>
+        <div class="item">Add your Apache folder, configure, and save</div>
+    </div>
+    <p><em>Note: You must run <code>httpd.exe</code> manually to start the Apache server.</em></p>
+
+    <div class="ui divider"></div>
+
+    <a class="ui red large button" href="https://github.com/iuscl-ide/httpd_settings/releases/latest">
+        <i class="download icon"></i>
+        Download Latest Version
+    </a>
+
+    <h3 class="ui header">Documentation</h3>
+    <ul class="ui list">
+        <li><a href="https://github.com/iuscl-ide/httpd_settings/blob/main/README.txt">README.txt</a> – usage guide</li>
+        <li><a href="https://github.com/iuscl-ide/httpd_settings/blob/main/CHANGELOG.txt">CHANGELOG.txt</a> – version history</li>
+        <li><a href="https://github.com/iuscl-ide/httpd_settings/blob/main/LICENSE.txt">LICENSE.txt</a> – MIT License</li>
+    </ul>
+
+    <div class="ui divider"></div>
+
+    <p style="color: #888; font-size: 0.9em; text-align: center;">
+        Project created with the help of <strong>ChatGPT</strong> · Licensed under the MIT License · © 2025
+    </p>
+</div>
+
+</body>
+</html>

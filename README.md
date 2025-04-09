@@ -1,4 +1,4 @@
-# https Settings (https_settings)
+# httpd Settings (httpd_settings)
 
 **Apache Server Configuration Tool for Windows**
 
@@ -26,7 +26,7 @@ This project was built with ChatGPT (OpenAI), used for coding, UI structure, and
 
 1. Download the latest ZIP release from the [Releases](https://github.com/iuscl-ide/httpd_settings/releases) page.
 2. Extract it to a folder of your choice.
-3. Run `https_settings.exe`.
+3. Run `httpd_settings.exe`.
 
 > **Note:** Apache must be downloaded separately. This tool does **not** bundle Apache or start/stop the server.
 
@@ -34,7 +34,7 @@ This project was built with ChatGPT (OpenAI), used for coding, UI structure, and
 
 ## 📦 Distribution Contents
 
-- `https_settings.exe` — the application
+- `httpd_settings.exe` — the application
 - `README.txt`, `LICENSE.txt`, `CHANGELOG.txt`
 - `httpd_settings_data/` — auto-created at runtime to store data
 

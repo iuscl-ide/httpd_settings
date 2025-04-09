@@ -1,5 +1,5 @@
 ===============================================================================
-https_settings — Apache Server Configuration Tool for Windows
+httpd_settings — Apache Server Configuration Tool for Windows
 ===============================================================================
 
 The UI, README, LICENSE, CHANGELOG, and internal logic were written with the
@@ -29,7 +29,7 @@ HOW TO USE
 -------------------------------------------------------------------------------
 
 1. Extract Apache (e.g., "httpd-2.4.62-240904-win64-VS17.zip") to a local folder.
-2. Launch this application: "https_settings.exe".
+2. Launch this application: "httpd_settings.exe".
 3. Add your Apache folder using the "Servers" section.
 4. Use the "Configurations" and "Parameters" sections to define your desired setup.
 5. Save your changes. The app will update the relevant config files.
@@ -50,7 +50,7 @@ FILES AND FOLDERS
 -------------------------------------------------------------------------------
 
 This ZIP contains:
-- https_settings.exe ............ the application
+- httpd_settings.exe ............ the application
 - README.txt .................... this file
 - LICENSE.txt ................... license information
 - CHANGELOG.txt ................. version history
