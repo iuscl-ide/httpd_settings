@@ -1,0 +1,31 @@
+===============================================================================
+CHANGELOG — https_settings
+===============================================================================
+
+VERSION 1.0.1 — 2025-04-09
+-------------------------------------------------------------------------------
+
+Initial public release.
+
+NEW:
+- Portable Windows desktop app to configure Apache HTTP Server (httpd)
+- Define and manage Apache Server Locations
+- Create and edit multiple named configurations
+- Edit SRVROOT path with automatic defaults
+- Manage multiple HTTP and HTTPS ports with activation toggles
+- Create Virtual Hosts with:
+  - Custom ports
+  - ServerName and DocumentRoot
+  - Multiple Aliases with URL path and target directory
+- Live editing with validation and user-friendly error messages
+- Configuration read/write support for httpd.conf and httpd-vhosts.conf
+- Config File Content Panel with highlighted Apache config lines
+- Configuration Info and Server Info summary views
+- Export and Import configurations as standalone JSON files
+- Auto-generated README, LICENSE, and packaging script
+
+NOTES:
+- Apache must be installed separately
+- The app does not start or stop the server — only manages configurations
+
+===============================================================================

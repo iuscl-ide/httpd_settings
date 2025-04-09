@@ -43,7 +43,7 @@ void main(List<String> args) async {
   }
 
   // Copy extra files (README, LICENSE, etc.)
-  final extraFiles = ['README.md', 'LICENSE', 'CHANGELOG.md'];
+  final extraFiles = ['README.txt', 'LICENSE.txt', 'CHANGELOG.txt', 'DEVELOPERS.txt'];
   for (final name in extraFiles) {
     final file = File('${extrasInputDir.path}/$name');
     if (file.existsSync()) {
