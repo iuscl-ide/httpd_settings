@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download Stats – httpd_settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+
+    <style>
+        body {
+          padding-top: 60px;
+        }
+        .ui.menu .item.logo {
+          font-weight: bold;
+          color: white !important;
+        }
+        .download-number {
+          font-weight: bold;
+          color: #1b1b6f;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top black menu -->
+<div class="ui fixed inverted menu">
+    <div class="ui container">
+        <a href="index.html" class="header item logo">
+            <img src="favicon.ico" style="width: 24px; height: 24px; margin-right: 10px;" alt="Logo">
+            httpd_settings
+        </a>
+        <a href="screenshots.html" class="item">Screenshots</a>
+        <a href="https://github.com/iuscl-ide/httpd_settings" class="item">GitHub</a>
+        <a href="https://github.com/iuscl-ide/httpd_settings/releases" class="item">Releases</a>
+    </div>
+</div>
+
+<!-- Main content -->
+<div class="ui main text container">
+    <h2 class="ui header">Download Stats</h2>
+    <p>This page shows real-time download statistics for all GitHub releases of the <strong>httpd_settings</strong> project.</p>
+
+    <div id="stats-section">
+        <div class="ui active inline loader"></div>
+        <p>Loading statistics from GitHub...</p>
+    </div>
+
+    <div id="total-section" style="margin-top: 2em;"></div>
+
+    <div class="ui divider"></div>
+
+    <p style="color: #888; font-size: 0.9em; text-align: center;">
+        Stats fetched live from GitHub API · Updated on page load
+    </p>
+</div>
+
+<script>
+    async function loadStats() {
+      const statsContainer = document.getElementById('stats-section');
+      const totalContainer = document.getElementById('total-section');
+
+      try {
+        const res = await fetch('https://api.github.com/repos/iuscl-ide/httpd_settings/releases');
+        const releases = await res.json();
+
+        if (!Array.isArray(releases)) throw new Error('Unexpected response');
+
+        let total = 0;
+        let html = '<div class="ui relaxed divided list">';
+        releases.forEach(release => {
+          const version = release.tag_name || release.name || 'Unnamed';
+          const count = release.assets.reduce((sum, asset) => sum + asset.download_count, 0);
+          total += count;
+          html += `
+            <div class="item">
+              <div class="content">
+                <div class="header">${version}</div>
+                <div class="description">Downloads: <span class="download-number">${count}</span></div>
+              </div>
+            </div>`;
+        });
+        html += '</div>';
+
+        statsContainer.innerHTML = html;
+
+        totalContainer.innerHTML = `
+          <div class="ui secondary segment">
+            <h4 class="ui header">Total Downloads</h4>
+            <p class="download-number" style="font-size: 1.4em;">${total}</p>
+          </div>
+        `;
+      } catch (err) {
+        statsContainer.innerHTML = `<div class="ui negative message">
+          <div class="header">Failed to load stats</div>
+          <p>${err.message}</p>
+        </div>`;
+      }
+    }
+
+    loadStats();
+</script>
+
+</body>
+</html>
