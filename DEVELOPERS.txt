@@ -1,0 +1,56 @@
+===============================================================================
+DEVELOPERS — https_settings
+===============================================================================
+
+CHATGPT USAGE:
+-------------------------------------------------------------------------------
+
+The UI, README, LICENSE, CHANGELOG, and internal logic were written with the
+assistance of ChatGPT by OpenAI, used as a coding and writing assistant.
+
+-------------------------------------------------------------------------------
+PROJECT STRUCTURE:
+-------------------------------------------------------------------------------
+This application is a Windows desktop tool built using:
+- Flutter (UI toolkit)
+- Dart (language)
+- Flutter Desktop (Windows target)
+
+All logic and UI are implemented in Dart. The project follows a modular
+structure, with separate files for each settings section (Ports, SRVROOT,
+Virtual Hosts, etc.).
+
+The configuration is stored in human-readable JSON files.
+
+Apache configuration files ("httpd.conf", "httpd-vhosts.conf") are parsed and
+modified directly, with app-inserted comment markers for safe tracking.
+
+-------------------------------------------------------------------------------
+BUILD AND PACKAGING:
+-------------------------------------------------------------------------------
+
+To build the application:
+- Run: "flutter build windows"
+
+To create a distribution ZIP:
+- Run: "dart tool/package.dart"
+- This script:
+  - Reads the app version from pubspec.yaml
+  - Creates a timestamped output folder under "release_packages/"
+  - Copies the compiled ".exe" and related files
+  - Adds:
+    - README.txt
+    - LICENSE.txt
+    - CHANGELOG.txt
+  - Excludes "httpd_settings_data/" (which is created at runtime)
+
+-------------------------------------------------------------------------------
+NOTES:
+-------------------------------------------------------------------------------
+
+This tool does not bundle Apache or any external dependencies.
+All configuration files are edited in-place.
+
+You are welcome to fork, modify, or contribute improvements via GitHub.
+
+===============================================================================
